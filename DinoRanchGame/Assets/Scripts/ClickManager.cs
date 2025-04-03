@@ -15,6 +15,7 @@ public class ClickManager : MonoBehaviour
         whatGetsClicked();
     }
 
+    
     //wyczuwa co zosta³o klikniête i mówi co zrobiæ w zwi¹zku z tym
     void whatGetsClicked()
     {
