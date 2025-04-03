@@ -11,15 +11,11 @@ public class CameraManager : MonoBehaviour
     public Transform targetL;
     public Transform targetM;
     public Transform targetR;
-    private bool isLeft;
-    private bool isRight;
-    private bool isMiddle;
+
 
     void Start()
     {
-        isMiddle = true;
-        isLeft = false; 
-        isRight = false;
+
     }
 
     // Update is called once per frame
@@ -33,16 +29,11 @@ public class CameraManager : MonoBehaviour
     private void CheckLeft()
     {
         //scrolluj do lewej jeœli jest poœrodku
-        if (CameraMovL.mouseLover && isMiddle && !isLeft && !isRight)
+        if (CameraMovL.mouseLover)
         {
             scrollToLeft();
         }
 
-        //srcolluj do œrodka jeœli jest po prawej
-        else if (CameraMovL.mouseLover && isRight && !isLeft && !isMiddle)
-        {
-            scrollToMiddle();
-        }
     }
 
 
@@ -50,16 +41,11 @@ public class CameraManager : MonoBehaviour
     private void CheckRight()
     {
         //scolluj do prawej jeœli jest poœrodku
-        if (CameraMovR.mouseRover && !isLeft && !isRight && isMiddle)
+        if (CameraMovR.mouseRover)
         {
             scrollToRight();
         }
 
-        //scolluj do œrodka jeœli jest po lewej
-        else if (CameraMovR.mouseRover && isLeft && !isRight && !isMiddle)
-        {
-            scrollToMiddle();
-        }
     }
 
     public void scrollToLeft()
@@ -68,11 +54,6 @@ public class CameraManager : MonoBehaviour
         StartCoroutine(WaitForCameraL());
     }
 
-    public void scrollToMiddle()
-    {
-        transform.position = Vector3.Lerp(transform.position, targetM.position, 0.004f);
-        StartCoroutine(WaitForCameraM());
-    }
     public void scrollToRight()
     {
         transform.position = Vector3.Lerp(transform.position, targetR.position, 0.004f);
@@ -82,23 +63,13 @@ public class CameraManager : MonoBehaviour
     IEnumerator WaitForCameraL()
     {
         yield return new WaitForSeconds(1);
-        isLeft = true;
-        isRight = false;
-        isMiddle = false;
+   
     }
 
     IEnumerator WaitForCameraR()
     {
         yield return new WaitForSeconds(1);
-        isLeft = false;
-        isRight = true;
-        isMiddle = false;
+    
     }
-    IEnumerator WaitForCameraM()
-    {
-        yield return new WaitForSeconds(1);
-        isLeft = false;
-        isRight = false;
-        isMiddle = true;
-    }
+
 }
