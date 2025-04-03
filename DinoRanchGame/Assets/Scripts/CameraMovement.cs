@@ -20,7 +20,7 @@ public class CameraMovement : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         mouse_over = true;
 
-        while(mouse_over == true)
+        if(mouse_over == true)
         {
             CameraManager.scrollLeft();
         }
