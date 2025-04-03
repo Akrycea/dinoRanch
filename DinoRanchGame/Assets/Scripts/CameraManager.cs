@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEngine.GraphicsBuffer;
 
 public class CameraManager : MonoBehaviour
 {
+    public Transform target;
 
-   
     void Start()
     {
 
@@ -20,7 +21,7 @@ public class CameraManager : MonoBehaviour
 
     public void scrollLeft()
     {
-        transform.position += new Vector3 (-2,0,0);
+        transform.position = Vector3.Lerp(transform.position, target.position, 0.1f);
     }
 
 }
