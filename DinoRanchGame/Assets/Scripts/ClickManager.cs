@@ -5,9 +5,11 @@ using UnityEngine.XR;
 
 public class ClickManager : MonoBehaviour
 {
+    public bool canClickBG;
+    public MW1 MWarm1;
     void Start()
     {
-
+        canClickBG = true;
     }
 
     void Update()
@@ -20,7 +22,7 @@ public class ClickManager : MonoBehaviour
     void whatGetsClicked()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canClickBG)
         {
             RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
 
@@ -31,6 +33,7 @@ public class ClickManager : MonoBehaviour
                 if (rayHit.transform.name == "Dino1")
                 {
                     Debug.Log("dino1");
+                    MWarm1.StartMWarm1();
                 }
                 
             }

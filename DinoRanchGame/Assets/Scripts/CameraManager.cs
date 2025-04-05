@@ -6,6 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class CameraManager : MonoBehaviour
 {
+    public ClickManager ClickManager;
     public CameraMovementLeft CameraMovL;
     public CameraMovementRight CameraMovR;
     public Transform targetL;
@@ -13,10 +14,13 @@ public class CameraManager : MonoBehaviour
     public Transform targetR;
 
 
+
     void Start()
     {
 
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -28,8 +32,8 @@ public class CameraManager : MonoBehaviour
     //sprawdza czy gracz leci w lewo
     private void CheckLeft()
     {
-        //scrolluj do lewej jeœli jest poœrodku
-        if (CameraMovL.mouseLover)
+        //scrolluj do lewej
+        if (CameraMovL.mouseLover && ClickManager.canClickBG)
         {
             scrollToLeft();
         }
@@ -40,8 +44,8 @@ public class CameraManager : MonoBehaviour
     //sprawdza czy gracz leci w prawo
     private void CheckRight()
     {
-        //scolluj do prawej jeœli jest poœrodku
-        if (CameraMovR.mouseRover)
+        //scolluj do prawej
+        if (CameraMovR.mouseRover && ClickManager.canClickBG)
         {
             scrollToRight();
         }
