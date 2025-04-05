@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
+    public ResourcesManager RManager;
     public float currentTime;
     void Start()
     {
@@ -22,8 +23,13 @@ public class TimeManager : MonoBehaviour
     {
         currentTime = currentTime - Time.deltaTime;
 
+        //spadanie iloœci zasobów z czasem
+        RManager.WATER = RManager.WATER - (Time.deltaTime / 2);
+        RManager.FOOD = RManager.FOOD - (Time.deltaTime/2);
+        RManager.WARM = RManager.WARM - (Time.deltaTime / 2);
+
         //koniec dnia po skoñczeniu siê czasu
-        if( currentTime <= 0)
+        if ( currentTime <= 0)
         {
             dayEnds();
         }
