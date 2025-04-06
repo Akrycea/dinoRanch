@@ -1,13 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 using System.Xml.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MW1 : MonoBehaviour
-{   public ClickManager ClickManager;
+{
+    //zasoby
+    public ResourcesManager RManager;
+
+    //rzeczy do minigierki
+    public ClickManager ClickManager;
     public int MW1_count;
     public GameObject[] MinigameObjects;
     public TMP_Text MW1gameText;
@@ -78,11 +84,17 @@ public class MW1 : MonoBehaviour
     //zakoñczenie gry
     void MWarm1End()
     {
+
         playingGame = false;
 
         StartCoroutine(waitingToEndGame());
         
         timeStart = false;
+
+        //dodaje zdobyte zasoby
+        RManager.WARM = RManager.WARM + MW1_count;
+
+        //przywraca klikanie na t³o
         ClickManager.canClickBG = true;
     }
 
