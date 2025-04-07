@@ -1,0 +1,12 @@
+﻿title: NarratorTalk
+tags:
+---
+<<blockClicking DialogueManager>>
+test 
+
+-> CHOOSE
+-> please?
+
+<<unblockClicking DialogueManager>>
+<<startTime DialogueManager>>
+===
