@@ -7,6 +7,7 @@ public class ClickManager : MonoBehaviour
 {
     public bool canClickBG;
     public MW1 MWarm1;
+    public MF1 MFood1;
     void Start()
     {
         canClickBG = false;
@@ -18,7 +19,7 @@ public class ClickManager : MonoBehaviour
     }
 
     
-    //wyczuwa co zosta³o klikniête i mówi co zrobiæ w zwi¹zku z tym
+    //wyczuwa co zostaï¿½o klikniï¿½te i mï¿½wi co zrobiï¿½ w zwiï¿½zku z tym
     void whatGetsClicked()
     {
 
@@ -26,10 +27,10 @@ public class ClickManager : MonoBehaviour
         {
             RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
 
-            //sprawdza wszystkie dinozaury z tagiem CIEP£A
+            //sprawdza wszystkie dinozaury z tagiem CIEPï¿½A
             if (rayHit.transform.CompareTag("WARM"))
             {
-                //co robi klikniêcie na danego dinozaura
+                //co robi klikniï¿½cie na danego dinozaura
                 if (rayHit.transform.name == "Dino1")
                 {
                     Debug.Log("dino1");
@@ -53,6 +54,7 @@ public class ClickManager : MonoBehaviour
                 if (rayHit.transform.name == "Dino3")
                 {
                     Debug.Log("dino3");
+                    MFood1.StartMF1();
                 }
 
             }
