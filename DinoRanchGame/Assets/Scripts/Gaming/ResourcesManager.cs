@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.UIElements;
 using UnityEngine.UI;
+using TMPro;
 
 public class ResourcesManager : MonoBehaviour
 {
@@ -13,10 +13,10 @@ public class ResourcesManager : MonoBehaviour
     public float FOOD;
     public float WATER;
 
-    //slidery zasobów
-    public Slider sliderW;
-    public Slider sliderWat;
-    public Slider sliderF;
+    //liczba zasobów pokazywana na UI
+    public TMP_Text warmCount;
+    public TMP_Text waterCount;
+    public TMP_Text foodCount;
 
     void Start()
     {
@@ -24,16 +24,6 @@ public class ResourcesManager : MonoBehaviour
         WARM = 100;
         FOOD = 100;
         WATER = 100;
-
-        //max i min sliderów
-        sliderW.maxValue = 100;
-        sliderW.minValue = 0;
-
-        sliderWat.maxValue = 100;
-        sliderWat.minValue = 0;
-
-        sliderF.maxValue = 100;
-        sliderF.minValue = 0;
 
     }
 
@@ -48,13 +38,13 @@ public class ResourcesManager : MonoBehaviour
             WATER = WATER - Time.deltaTime / 2;
         }
 
-        //odpalenie sliderów
-        sliderWarm();
-        sliderWater();
-        sliderFood();
+        //robienie float na liczby ca³kowite
+        warmCount.text = WARM.ToString("0");
+        waterCount.text = WATER.ToString("0");
+        foodCount.text = FOOD.ToString("0");
 
         //pilnuje ¿eby nie by³o wiêcej ni¿ max zasobów
-        if(WARM > 100)
+        if (WARM > 100)
         {
             WARM = 100;
         }
@@ -69,24 +59,5 @@ public class ResourcesManager : MonoBehaviour
 
     }
 
-
-    //slider WARM
-    public void sliderWarm()
-    {
-        sliderW.value = WARM;
-        
-    }
-
-    //slider WATER
-    public void sliderWater()
-    {
-        sliderWat.value = WATER;
-    }
-
-    //slider FOOD
-    public void sliderFood()
-    {
-        sliderF.value = FOOD;
-    }
 
 }

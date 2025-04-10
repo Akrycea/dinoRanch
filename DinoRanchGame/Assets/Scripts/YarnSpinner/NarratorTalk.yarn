@@ -2,10 +2,16 @@
 tags:
 ---
 <<blockClicking DialogueManager>>
-test 
 
--> CHOOSE
--> please?
+Hello!
+I see you're the new owner of this wonderfu ranch!
+Let me quickly explain a few basic things.
+Dinosaurs need to stay warm, drink and eat.
+See the sliders in the top right? Keep'em high. 
+Otherwise your dinos will be really unhappy.
+And you don't want to be eaten by a bunch of miserable dinos.
+You can restock your resources by taking care of your ranch.
+Just click on the dinos and see what happens!
 
 <<unblockClicking DialogueManager>>
 <<startTime DialogueManager>>
