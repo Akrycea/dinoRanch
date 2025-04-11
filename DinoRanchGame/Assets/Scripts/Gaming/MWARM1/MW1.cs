@@ -53,7 +53,7 @@ public class MW1 : MonoBehaviour
     //odpalenie gry
     public void StartMWarm1()
     {
-        //odpala siê okienko gry
+        //odpala siï¿½ okienko gry
         foreach (var obj in MinigameObjects) 
         {
             obj.SetActive(true);
@@ -73,12 +73,12 @@ public class MW1 : MonoBehaviour
         gameTimer = gameTimer + Time.deltaTime;
     }
 
-    //co dzieje siê podczas gry
+    //co dzieje siï¿½ podczas gry
     void MWarm1Playing()
     {
-        //tu zrobiæ animacje futra latajacego na lewo i prawo bo jest odcinane lol
+        //tu zrobiï¿½ animacje futra latajacego na lewo i prawo bo jest odcinane lol
 
-        //koñcz gre po danym czasie
+        //koï¿½cz gre po danym czasie
         if(gameTimer > 5)
         {
             Debug.Log("end game");
@@ -86,13 +86,13 @@ public class MW1 : MonoBehaviour
         }
     }
 
-    //zakoñczenie gry
+    //zakoï¿½czenie gry
     void MWarm1End()
     {
 
         playingGame = false;
 
-        //czeka chwilkê z zamkniêciem gry aby pokazaæ ile zdobyto zasobów
+        //czeka chwilkï¿½ z zamkniï¿½ciem gry aby pokazaï¿½ ile zdobyto zasobï¿½w
         StartCoroutine(waitingToEndGame());
         
         timeStart = false;
@@ -101,7 +101,7 @@ public class MW1 : MonoBehaviour
         RManager.WARM = RManager.WARM + MW1_count;
         
 
-        //przywraca klikanie na t³o
+        //przywraca klikanie na tï¿½o
         ClickManager.canClickBG = true;
     }
 

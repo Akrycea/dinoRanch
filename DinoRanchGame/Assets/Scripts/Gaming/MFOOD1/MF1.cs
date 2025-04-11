@@ -17,6 +17,7 @@ public class MF1 : MonoBehaviour
     public ClickManager ClickManager;
     public GameObject[] MinigameObjects;
     public int MF1berries_count;
+    public TMP_Text MF1gameText;
 
     [SerializeField] private float gameTimer;
     private bool timeStart;
