@@ -1,6 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
+using System.Xml.Linq;
+using TMPro;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MF1 : MonoBehaviour
 {
@@ -62,17 +68,26 @@ public class MF1 : MonoBehaviour
         if (gameTimer < 0)
         {
             Debug.Log("end game");
+            MFood1End();
 
         }
     }
-    void MF1End()
+    void MFood1End()
     {
         timeStart=false;
         RManager.FOOD= RManager.FOOD + MF1berries_count;
+        StartCoroutine(waitingToEndGame());
         ClickManager.canClickBG=true;
-         foreach (var obj in MinigameObjects)
+        
+    }
+    IEnumerator waitingToEndGame()
+    {
+        yield return new WaitForSeconds(3);
+        //zamyka okienko gry
+        foreach (var obj in MinigameObjects)
         {
             obj.SetActive(false);
         }
+
     }
 }
