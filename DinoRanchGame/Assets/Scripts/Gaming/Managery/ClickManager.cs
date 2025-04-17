@@ -31,9 +31,9 @@ public class ClickManager : MonoBehaviour
             if (rayHit.transform.CompareTag("WARM"))
             {
                 //co robi klikni�cie na danego dinozaura
-                if (rayHit.transform.name == "Dino1")
+                if (rayHit.transform.name == "DefDino1")
                 {
-                    Debug.Log("dino1");
+                    Debug.Log("Defdino1");
                     MWarm1.StartMWarm1();
                 }
                 
@@ -42,18 +42,18 @@ public class ClickManager : MonoBehaviour
             //sprawdza wszystkie dinozaury z tagiem WODY
             else if (rayHit.transform.CompareTag("WATER"))
             {
-                if (rayHit.transform.name == "Dino2")
+                if (rayHit.transform.name == "DefDino2")
                 {
-                    Debug.Log("dino2");
+                    Debug.Log("Defdino2");
                 }
             }
 
             //sprawdza wszystkie dinozaury z tagiem JEDZENIA
             else if (rayHit.transform.CompareTag("FOOD"))
             {
-                if (rayHit.transform.name == "Dino3")
+                if (rayHit.transform.name == "DefDino3")
                 {
-                    Debug.Log("dino3");
+                    Debug.Log("Defdino3");
                     MFood1.StartMF1();
                 }
 

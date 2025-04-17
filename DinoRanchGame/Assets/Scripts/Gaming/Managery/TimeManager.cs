@@ -9,6 +9,8 @@ public class TimeManager : MonoBehaviour
     public bool didGameStart;
     public float currentTime;
     public TMP_Text timer;
+    public ClickManager clickManager;
+    public SpawnManager spawnManager;
     void Start()
     {
         currentTime = 10;
@@ -19,7 +21,7 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         //czeka a¿ zacznie siê gra aby zacz¹æ liczyæ czas
-        if (didGameStart)
+        if (didGameStart && currentTime > 0)
         {
             timePassing();
         }
@@ -45,6 +47,9 @@ public class TimeManager : MonoBehaviour
     //koniec dnia
     void dayEnds()
     {
+        clickManager.canClickBG = false;
+        didGameStart = false;
+        spawnManager.openBoostWindow();
         Debug.Log("day ended");
     }
 }
