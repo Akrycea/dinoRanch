@@ -13,7 +13,8 @@ public class TimeManager : MonoBehaviour
     public SpawnManager spawnManager;
     void Start()
     {
-        currentTime = 10;
+        didGameStart = false;
+        currentTime = 30;
         timer.text = currentTime.ToString("0");
     }
 
@@ -57,6 +58,6 @@ public class TimeManager : MonoBehaviour
 
     public void resetTime()
     {
-        currentTime = 10;
+        currentTime = 30;
     }
 }

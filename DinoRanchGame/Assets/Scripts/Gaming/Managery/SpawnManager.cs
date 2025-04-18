@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -10,11 +11,15 @@ public class SpawnManager : MonoBehaviour
     //canvas z wybeiraniem boostów
     public GameObject[] boostUI;
 
-    public Canvas boostCanvas;
 
     //szuka prawej krawêdzi ekranu
     public GameObject edgeTarget;
 
+    //ustala kase
+    public int money;
+    public TMP_Text moneyCount;
+
+    //potrzebne managery
     public TimeManager timeManager;
     public ClickManager clickManager;
     public ResourcesManager resourcesManager;
@@ -28,13 +33,16 @@ public class SpawnManager : MonoBehaviour
             obj.SetActive(false);
         }
 
+        //zeruje kase na pocz¹tku lvl
+        money = 0;
+        moneyCount.text = money.ToString("0");
 
     }
 
   
     void Update()
     {
-        
+        moneyCount.text = money.ToString("0");
     }
 
     public void openBoostWindow()
@@ -50,13 +58,14 @@ public class SpawnManager : MonoBehaviour
     {
         moveSpawnPosition();
         Instantiate(spawnableDinos[0], gameObject.transform.position, Quaternion.identity );
+        money = money - 10;
         closeBoostUI();
     }
 
     //zmienia pozycje dla nastêpnego kupionego dinozaura
     private void moveSpawnPosition()
     {
-        gameObject.transform.position = gameObject.transform.position + new Vector3 (74,0,0);
+        gameObject.transform.position = gameObject.transform.position + new Vector3 (30,0,0);
         edgeTarget.transform.position = gameObject.transform.position;
     }
 

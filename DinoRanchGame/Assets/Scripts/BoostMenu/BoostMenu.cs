@@ -13,17 +13,23 @@ public class BoostMenu : MonoBehaviour
     }
     public void BuyDino ()
     {
-        //dodaæ ¿e jeszcze musi ci starczyæ kasy na to
-        if(gameObject.name == "Button")
+        //kupuje dino jesli wystarczajaca ma sie kasy
+        if(gameObject.name == "Button" && spawnManager.money >= 10)
         {
             Debug.Log("bought dino");
             spawnManager.spawn1BoughtDino();
-            //button.enabled = false;
+            button.enabled = false;
         }
         else
         {
             Debug.Log(gameObject.name);
+            //button.enabled = false;
         }
-        button.enabled = false;
+        
+    }
+
+    public void skipToNextDay()
+    {
+        spawnManager.closeBoostUI();
     }
 }

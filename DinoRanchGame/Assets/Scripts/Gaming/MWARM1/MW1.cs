@@ -14,7 +14,8 @@ public class MW1 : MonoBehaviour
     public ResourcesManager RManager;
 
     //rzeczy do minigierki
-    public ClickManager ClickManager;
+    public ClickManager clickManager;
+    public SpawnManager spawnManager;
     public int MW1_count;
     public GameObject[] MinigameObjects;
     public TMP_Text MW1gameText;
@@ -39,7 +40,7 @@ public class MW1 : MonoBehaviour
     {
         if (timeStart)
         {
-            ClickManager.canClickBG = false;
+            clickManager.canClickBG = false;
             MW1StartTimer();
             MWarm1Playing();
             if (MW1_count >= 1)
@@ -76,12 +77,11 @@ public class MW1 : MonoBehaviour
     //co dzieje si� podczas gry
     void MWarm1Playing()
     {
-        //tu zrobi� animacje futra latajacego na lewo i prawo bo jest odcinane lol
+        //tu zrobic animacje futra latajacego na lewo i prawo bo jest odcinane lol
 
-        //ko�cz gre po danym czasie
+        //koncz gre po danym czasie
         if(gameTimer > 5)
         {
-            Debug.Log("end game");
             MWarm1End();
         }
     }
@@ -92,17 +92,20 @@ public class MW1 : MonoBehaviour
 
         playingGame = false;
 
-        //czeka chwilk� z zamkni�ciem gry aby pokaza� ile zdobyto zasob�w
+        //czeka chwilke z zamkni�ciem gry aby pokazac ile zdobyto zasob�w
         StartCoroutine(waitingToEndGame());
         
         timeStart = false;
 
         //dodaje zdobyte zasoby
         RManager.WARM = RManager.WARM + MW1_count;
+
+        //dodaje zdobytą kasę za opiekę
+        spawnManager.money =  spawnManager.money + MW1_count/2;
         
 
-        //przywraca klikanie na t�o
-        ClickManager.canClickBG = true;
+        //przywraca klikanie na tło
+        clickManager.canClickBG = true;
     }
 
     IEnumerator waitingToEndGame()
