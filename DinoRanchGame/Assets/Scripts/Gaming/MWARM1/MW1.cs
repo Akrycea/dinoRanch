@@ -110,7 +110,7 @@ public class MW1 : MonoBehaviour
 
     IEnumerator waitingToEndGame()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         //zamyka okienko gry
         foreach (var obj in MinigameObjects)
         {

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BoostMenu : MonoBehaviour
 {
+    public ResourcesManager resourcesManager;
     public SpawnManager spawnManager;
     Button button;
     private void Start()
@@ -17,7 +18,14 @@ public class BoostMenu : MonoBehaviour
         if(gameObject.name == "Button" && spawnManager.money >= 10)
         {
             Debug.Log("bought dino");
+            //spawnuje dino
             spawnManager.spawn1BoughtDino();
+
+            //mówi ¿e resources dostaj¹ boosta
+            resourcesManager.boost1Active = true;
+            resourcesManager.resourcesBoosted = true;
+
+            //wy³¹cza mo¿liwoœæ klikniêcia przycisku
             button.enabled = false;
         }
         else

@@ -9,6 +9,11 @@ public class ResourcesManager : MonoBehaviour
     public TimeManager timeManager;
     public GameOverMenu gameOverMenu;
 
+    //bool czy dziala jakis boost
+    public bool resourcesBoosted;
+    //boole wszytskich isntiejacyh boostow
+    [HideInInspector] public bool boost1Active;
+
     //resources set
     public float WARM;
     public float FOOD;
@@ -26,18 +31,18 @@ public class ResourcesManager : MonoBehaviour
         FOOD = 30;
         WATER = 30;
 
+        //wy³¹cza boosty
+        resourcesBoosted = false;
+        boost1Active = false;
+
     }
 
 
     void Update()
     {
-        //spadanie iloœci zasobów z czasem
-        if(timeManager.currentTime >0 && timeManager.didGameStart)
-        {
-            WARM = WARM - Time.deltaTime * 3;
-            FOOD = FOOD - Time.deltaTime / 2;
-            WATER = WATER - Time.deltaTime / 4;
-        }
+        usingResourses();
+
+
 
         //robienie float na liczby ca³kowite
         warmCount.text = WARM.ToString("0");
@@ -62,6 +67,23 @@ public class ResourcesManager : MonoBehaviour
         if(WARM < 0 || FOOD < 0 || WATER < 0)
         {
             gameOverMenu.gameOver();
+        }
+    }
+
+    private void usingResourses()
+    {
+        //spadanie iloœci zasobów z czasem bez boostow
+        if(timeManager.currentTime >0 && timeManager.didGameStart)
+        {
+            WARM = WARM - Time.deltaTime * 2.5f;
+            FOOD = FOOD - Time.deltaTime / 2;
+            WATER = WATER - Time.deltaTime / 4;
+
+            // zmienia prêdkoœæ spadania zasobów, sprawdza któryboost ma wybraæ i to robi
+            if (resourcesBoosted && boost1Active)
+            {
+                WARM = WARM + Time.deltaTime * 1.5f;
+            }
         }
     }
 
