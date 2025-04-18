@@ -710,7 +710,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your dinos we'rent happy enough :(
+  m_text: Your dinos weren't happy enough :(
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2764,6 +2764,7 @@ GameObject:
   - component: {fileID: 1038028252}
   - component: {fileID: 1038028251}
   - component: {fileID: 1038028253}
+  - component: {fileID: 1038028254}
   m_Layer: 0
   m_Name: DefDino1
   m_TagString: WARM
@@ -2812,12 +2813,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b35c729baabd87347bec0e80050bde43, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a9dcca75fb517d458d6a12b863159af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 11.62, y: 9.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2874,8 +2875,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 11.51, y: 9.37}
-    newSize: {x: 1, y: 2}
+    oldSize: {x: 11.62, y: 9.46}
+    newSize: {x: 11.62, y: 9.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -3117,6 +3118,27 @@ PolygonCollider2D:
       - {x: -0.49499997, y: -4.3849998}
       - {x: -0.255, y: -4.085}
   m_UseDelaunayMesh: 0
+--- !u!95 &1038028254
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038028249}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: faf66f47851ac96439e8344d6af64f7e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1038372258
 GameObject:
   m_ObjectHideFlags: 0
