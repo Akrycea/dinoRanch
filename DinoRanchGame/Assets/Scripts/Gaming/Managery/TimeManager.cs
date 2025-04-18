@@ -14,7 +14,7 @@ public class TimeManager : MonoBehaviour
     void Start()
     {
         didGameStart = false;
-        currentTime = 10;
+        currentTime = 30;
         timer.text = currentTime.ToString("0");
     }
 

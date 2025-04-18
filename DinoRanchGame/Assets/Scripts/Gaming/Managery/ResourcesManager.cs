@@ -42,8 +42,6 @@ public class ResourcesManager : MonoBehaviour
     {
         usingResourses();
 
-
-
         //robienie float na liczby ca³kowite
         warmCount.text = WARM.ToString("0");
         waterCount.text = WATER.ToString("0");
@@ -75,7 +73,7 @@ public class ResourcesManager : MonoBehaviour
         //spadanie iloœci zasobów z czasem bez boostow
         if(timeManager.currentTime >0 && timeManager.didGameStart)
         {
-            WARM = WARM - Time.deltaTime * 2.5f;
+            WARM = WARM - Time.deltaTime * 2;
             FOOD = FOOD - Time.deltaTime / 2;
             WATER = WATER - Time.deltaTime / 4;
 
