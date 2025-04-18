@@ -1535,6 +1535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89c215f76f8d4e41af4c62d4eee6372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourcesManager: {fileID: 0}
   spawnManager: {fileID: 1776862796}
 --- !u!114 &710411162
 MonoBehaviour:
@@ -2407,6 +2408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89c215f76f8d4e41af4c62d4eee6372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourcesManager: {fileID: 0}
   spawnManager: {fileID: 1776862796}
 --- !u!1 &944257011
 GameObject:
@@ -2833,7 +2835,7 @@ Transform:
   m_GameObject: {fileID: 1038028249}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -944.84, y: -277.84387, z: -3.0214484}
+  m_LocalPosition: {x: -944.84, y: -277.84387, z: -3.021448}
   m_LocalScale: {x: 0.82322, y: 0.82322, z: 0.82322}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4539,6 +4541,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeManager: {fileID: 548327320}
   gameOverMenu: {fileID: 231112063}
+  resourcesBoosted: 0
+  boost1Active: 0
   WARM: 0
   FOOD: 0
   WATER: 0
@@ -4991,6 +4995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89c215f76f8d4e41af4c62d4eee6372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourcesManager: {fileID: 1754448864}
   spawnManager: {fileID: 1776862796}
 --- !u!1 &1864595276
 GameObject:
@@ -5044,6 +5049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89c215f76f8d4e41af4c62d4eee6372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourcesManager: {fileID: 0}
   spawnManager: {fileID: 1776862796}
 --- !u!114 &1864595279
 MonoBehaviour:
