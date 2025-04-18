@@ -59,5 +59,13 @@ public class ResourcesManager : MonoBehaviour
 
     }
 
+    //resetuje resources (u¿yte przy odpalaniu kolejnego dnia)
+    public void resetResources()
+    {
+        WARM = 100;
+        FOOD = 100;
+        WATER = 100;
+    }
+
 
 }

@@ -49,7 +49,14 @@ public class TimeManager : MonoBehaviour
     {
         clickManager.canClickBG = false;
         didGameStart = false;
+
+        //w³¹cza boost ui
         spawnManager.openBoostWindow();
         Debug.Log("day ended");
+    }
+
+    public void resetTime()
+    {
+        currentTime = 10;
     }
 }

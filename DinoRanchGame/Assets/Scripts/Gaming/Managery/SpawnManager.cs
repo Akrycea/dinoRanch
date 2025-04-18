@@ -17,6 +17,7 @@ public class SpawnManager : MonoBehaviour
 
     public TimeManager timeManager;
     public ClickManager clickManager;
+    public ResourcesManager resourcesManager;
 
   
     void Start()
@@ -59,13 +60,22 @@ public class SpawnManager : MonoBehaviour
         edgeTarget.transform.position = gameObject.transform.position;
     }
 
+    //zamykanie UI i odpalanie nastêpnego dnia
     public void closeBoostUI()
     {
+        //zamyka boost ui
         foreach (var obj in boostUI)
         {
             obj.SetActive(false);
         }
         clickManager.canClickBG = true;
+
+        //odpala nastêpny dzieñ
+        timeManager.resetTime();
+        timeManager.didGameStart = true;
+
+        //odnawia resources
+        resourcesManager.resetResources();
 
     }
 
