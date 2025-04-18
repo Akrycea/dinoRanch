@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicLibrary: {fileID: 321317237}
-  musicSource: {fileID: 0}
+  musicSource: {fileID: 1659818786}
 --- !u!4 &321317239
 Transform:
   m_ObjectHideFlags: 0
