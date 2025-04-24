@@ -72,7 +72,7 @@ public class SpawnManager : MonoBehaviour
     private void moveSpawnPosition()
     {
         gameObject.transform.position = gameObject.transform.position + new Vector3 (30,0,0);
-        edgeTarget.transform.position = gameObject.transform.position;
+        edgeTarget.transform.position = gameObject.transform.position + new Vector3(0,0,-7);
     }
 
     //zamykanie UI i odpalanie nastêpnego dnia
