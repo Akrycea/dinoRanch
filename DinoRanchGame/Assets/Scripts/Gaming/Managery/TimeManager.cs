@@ -14,7 +14,7 @@ public class TimeManager : MonoBehaviour
     void Start()
     {
         didGameStart = false;
-        currentTime = 30;
+        currentTime = 25;
         timer.text = currentTime.ToString("0");
     }
 
@@ -58,6 +58,6 @@ public class TimeManager : MonoBehaviour
 
     public void resetTime()
     {
-        currentTime = 30;
+        currentTime = 25;
     }
 }

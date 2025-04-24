@@ -24,7 +24,10 @@ public class SpawnManager : MonoBehaviour
     public ClickManager clickManager;
     public ResourcesManager resourcesManager;
 
-  
+    //zak³adki z dinozaurami i ich przewijanie
+    public BoostPages boostPages;
+
+
     void Start()
     {
         //na starcie wy³¹czamy ui boostów
@@ -51,6 +54,9 @@ public class SpawnManager : MonoBehaviour
         {
             obj.SetActive(true);
         }
+        //zeruje przewijanie dinozaurów
+        boostPages.pagesLeft = 0;
+        boostPages.pagesRight = 1;
     }
 
     //spawnuje kupionego dinozaura 1
