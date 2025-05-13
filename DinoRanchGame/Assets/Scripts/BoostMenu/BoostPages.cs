@@ -16,7 +16,7 @@ public class BoostPages : MonoBehaviour
         {
             foreach (var button in buttons)
             {
-                button.transform.position = button.transform.position + new Vector3(-1800, 0, 0);
+                button.transform.position = button.transform.position + new Vector3(-1345, 0, 0);
             }
             pagesLeft ++;
             pagesRight --;
@@ -31,7 +31,7 @@ public class BoostPages : MonoBehaviour
         {
             foreach (var button in buttons)
             {
-                button.transform.position = button.transform.position + new Vector3(1800, 0, 0);
+                button.transform.position = button.transform.position + new Vector3(1345, 0, 0);
             }
             pagesRight++;
             pagesLeft--;
