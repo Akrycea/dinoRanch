@@ -43,7 +43,7 @@ public class ClickManager : MonoBehaviour
                     Debug.Log("Defdino1");
                     MWarm1.StartMWarm1();
                 }
-                else if (rayHit.transform.name == "Dino1")
+                else if (rayHit.transform.name == "Dino1(Clone)")
                 {
                     Debug.Log("dino1");
                     MWarm2.StartMWarm2();
