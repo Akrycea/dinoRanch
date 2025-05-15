@@ -6,9 +6,16 @@ using System;
 
 public class TimeManager : MonoBehaviour
 {
+    //zaczyna gre
     public bool didGameStart;
+
+    //obecny czas
     public float currentTime;
+
+    //UI czasu
     public TMP_Text timer;
+
+    //managery
     public ClickManager clickManager;
     public SpawnManager spawnManager;
     void Start()
@@ -46,7 +53,7 @@ public class TimeManager : MonoBehaviour
     }
 
     //koniec dnia
-    void dayEnds()
+    public void dayEnds()
     {
         clickManager.canClickBG = false;
         didGameStart = false;

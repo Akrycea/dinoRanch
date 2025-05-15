@@ -6,7 +6,14 @@ using UnityEngine.XR;
 public class ClickManager : MonoBehaviour
 {
     public bool canClickBG;
+
+    //odwołania do gierek
+
+    //ciepła
     public MW1 MWarm1;
+    public MW2 MWarm2;
+
+    //jedzenia
     public MF1 MFood1;
     void Start()
     {
@@ -30,13 +37,18 @@ public class ClickManager : MonoBehaviour
             //sprawdza wszystkie dinozaury z tagiem CIEP�A
             if (rayHit.transform.CompareTag("WARM"))
             {
-                //co robi klikni�cie na danego dinozaura
+                //co robi klikniecie na danego dinozaura
                 if (rayHit.transform.name == "DefDino1")
                 {
                     Debug.Log("Defdino1");
                     MWarm1.StartMWarm1();
                 }
-                
+                else if (rayHit.transform.name == "Dino1")
+                {
+                    Debug.Log("dino1");
+                    MWarm2.StartMWarm2();
+                }
+
             }
 
             //sprawdza wszystkie dinozaury z tagiem WODY
