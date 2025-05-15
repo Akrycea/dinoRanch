@@ -20,6 +20,7 @@ public class MW2 : MonoBehaviour
     public GameObject[] MinigameShapes;
     public TMP_Text MW2gameText;
 
+
     public bool playingGame = false;
 
     [SerializeField] private float gameTimer;
@@ -56,6 +57,8 @@ public class MW2 : MonoBehaviour
             {
                 MW2gameText.text = "Shave the shape! " + ((MW2_count / 200) * 100).ToString("0") + "%";
             }
+
+            
         }
 
     }
@@ -69,6 +72,7 @@ public class MW2 : MonoBehaviour
             obj.SetActive(true);
         }
 
+
         //odpala pierwszy shape
         MinigameShapes[0].SetActive(true);
 
@@ -80,6 +84,7 @@ public class MW2 : MonoBehaviour
         MW2_count = 0;
         gameTimer = 0;
         timeStart = true;
+
 
     }
 
@@ -143,6 +148,8 @@ public class MW2 : MonoBehaviour
 
         //przywraca klikanie na tło
         clickManager.canClickBG = true;
+
+
     }
 
     IEnumerator waitingToEndGame()
@@ -158,6 +165,7 @@ public class MW2 : MonoBehaviour
         {
             obj.SetActive(false);
         }
+
 
     }
 }

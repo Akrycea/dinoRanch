@@ -33,6 +33,7 @@ public class MW2_FollowMouse : MonoBehaviour
     {
         Debug.Log("touching");
         mw2.MW2_count++;
+
     }
 
 
