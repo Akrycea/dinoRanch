@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class MWT1pipemanager : MonoBehaviour
 {
+    //holds pipes
     public GameObject PipesHolder;
     public GameObject[] Pipes;
-
-    [SerializeField]
     int totalPipes = 0;
-    // Start is called before the first frame update
+
+    int correctPipes;
+    
+    public int solution;
+    
     void Start()
     {
+        solution = 0;
         totalPipes = PipesHolder.transform.childCount;
 
         Pipes = new GameObject[totalPipes];
@@ -22,9 +26,18 @@ public class MWT1pipemanager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (solution < totalPipes)
+            {
+                //solution = 0;
+            }
+            else if (solution == totalPipes)
+            {
+                Debug.Log("you win");
+            }
+        }
     }
 }
