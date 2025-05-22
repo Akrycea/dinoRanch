@@ -28,20 +28,16 @@ public class MW2 : MonoBehaviour
 
     void Start()
     {
-        //*DO USUNIĘCIA
-        StartMWarm2();
 
-        //*ZROBIĆ NA FALSE
         foreach (var obj in MinigameObjects)
         {
-            obj.SetActive(true);
+            obj.SetActive(false);
         }
         foreach (var obj in MinigameShapes)
         {
             obj.SetActive(false);
         }
-        //*ODKOMENTOWAĆ
-        //timeStart = false;
+        timeStart = false;
     }
 
 
