@@ -32,16 +32,9 @@ public class MWT1pipemanager : MonoBehaviour
     //this is supposed to be a win
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (solution < totalPipes)
-            {
-                //solution = 0;
-            }
-            else if (solution == totalPipes)
-            {
-                Debug.Log("you win");
-            }
+        if (Input.GetMouseButtonDown(0) && solution == totalPipes)
+        {   
+           Debug.Log("you win");  
         }
     }
 }

@@ -9,7 +9,9 @@ public class MWT1pipe : MonoBehaviour
 
     //everything related to rotations
     public float[] correctRotation;
+    //this checks if the pipe is placed in its original rotation
     public bool isPlaced = false;
+    //this needs to be here for setting original rotations
     int PossibleRots = 1;
 
     public MWT1pipemanager manager;
@@ -38,7 +40,6 @@ public class MWT1pipe : MonoBehaviour
         transform.Rotate(new Vector3(0, 0, -90));
 
         Check();
-        //manager.solution = 0;
     }
 
     //this checks if the current rotation of the pipe is the same as its original one, 1st if for the is for pipes with multiple possible rotations
@@ -46,30 +47,30 @@ public class MWT1pipe : MonoBehaviour
     {
         if (PossibleRots > 1)
         {
-            if (transform.eulerAngles.z == correctRotation[0] || transform.eulerAngles.z == correctRotation[1] && isPlaced == false)
+            if (Mathf.Floor(transform.eulerAngles.z) == correctRotation[0]|| Mathf.Floor(transform.eulerAngles.z) == correctRotation[1] && isPlaced == false)
             {
                 isPlaced = true;
-                //manager.solution += 1;
+                manager.solution += 1;
             }
             else if (isPlaced == true)
             {
+                Debug.Log("false");
                 isPlaced = false;
+                manager.solution -= 1;
             }
         }
         else
         {
-            if (transform.eulerAngles.z == correctRotation[0] && isPlaced == false)
+            if (Mathf.Floor(transform.eulerAngles.z) == correctRotation[0] && isPlaced == false)
             {
                 isPlaced = true;
-                //manager.solution += 1;
+                manager.solution += 1;
             }
             else if (isPlaced == true)
             {
                 isPlaced = false;
+                manager.solution -= 1;
             }
         }
     }
-
-  
-
 }
