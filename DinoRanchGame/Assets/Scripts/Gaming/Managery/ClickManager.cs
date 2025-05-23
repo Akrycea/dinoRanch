@@ -15,6 +15,9 @@ public class ClickManager : MonoBehaviour
 
     //jedzenia
     public MF1 MFood1;
+
+    //wody
+    public MWT1pipemanager MWater1;
     void Start()
     {
         canClickBG = false;
@@ -57,6 +60,7 @@ public class ClickManager : MonoBehaviour
                 if (rayHit.transform.name == "DefDino2")
                 {
                     Debug.Log("Defdino2");
+                    MWater1.StartMWater1();
                 }
             }
 

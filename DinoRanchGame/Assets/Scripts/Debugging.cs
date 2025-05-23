@@ -6,11 +6,13 @@ public class Debugging : MonoBehaviour
 {
     public SpawnManager spawnManager;
     public TimeManager timeManager;
+    public ResourcesManager resourcesManager;
 
     void Update()
     {
         gibMoney();
         endDay();
+        maxRes();
     }
 
     void gibMoney()
@@ -26,6 +28,16 @@ public class Debugging : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E)) 
         {
             timeManager.dayEnds();
+        }
+    }
+
+    void maxRes()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            resourcesManager.WATER = 30;
+            resourcesManager.WARM = 30;
+            resourcesManager.FOOD = 30;
         }
     }
 }
