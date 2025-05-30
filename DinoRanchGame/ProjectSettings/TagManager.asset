@@ -9,6 +9,7 @@ TagManager:
   - WATER
   - Berry
   - Line
+  - Fur
   layers:
   - Default
   - TransparentFX

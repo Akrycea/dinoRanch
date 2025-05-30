@@ -20,6 +20,7 @@ public class MW1 : MonoBehaviour
     public GameObject[] MinigameObjects;
     public TMP_Text MW1gameText;
 
+
     public bool playingGame = false;
 
     [SerializeField] private float gameTimer;
@@ -78,13 +79,15 @@ public class MW1 : MonoBehaviour
     void MWarm1Playing()
     {
         //tu zrobic animacje futra latajacego na lewo i prawo bo jest odcinane lol
+        
 
         //koncz gre po danym czasie
-        if(gameTimer > 5)
+        if (gameTimer > 5)
         {
             MWarm1End();
         }
     }
+
 
     //zako�czenie gry
     void MWarm1End()
