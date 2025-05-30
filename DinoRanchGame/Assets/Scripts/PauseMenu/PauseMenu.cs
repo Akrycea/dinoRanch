@@ -42,7 +42,7 @@ public class PauseMenu : MonoBehaviour
 
         //w³¹cza czas i klikanie BG
         timeManager.didGameStart = true;
-        clickManager.canClickBG = false;
+        clickManager.canClickBG = true;
     }
 
     public void MainMenuButton()

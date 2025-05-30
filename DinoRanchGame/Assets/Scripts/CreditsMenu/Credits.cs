@@ -23,6 +23,7 @@ public class Credits : MonoBehaviour
             {
                 creditsMenu.SetActive(false);
                 pasueMenu.SetActive(true);
+                fromPauseMenu = false;
             }
             else
             {

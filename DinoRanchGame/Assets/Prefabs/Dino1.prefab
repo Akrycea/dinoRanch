@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7310950028159577599}
   - component: {fileID: 8758018899095953307}
   - component: {fileID: 2128682961212418611}
-  - component: {fileID: 1965140990168762608}
+  - component: {fileID: 7035951270606382638}
   m_Layer: 0
   m_Name: Dino1
   m_TagString: WARM
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 6565324370711074182}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -930.8, y: -277.84387, z: -3.0214484}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 68.101, y: 0.274, z: -0.045}
+  m_LocalScale: {x: 0.7765, y: 0.7765, z: 0.7765}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -336,7 +336,7 @@ PolygonCollider2D:
       - {x: -1.06, y: -5.06}
       - {x: -1.0799999, y: -4.9}
   m_UseDelaunayMesh: 0
---- !u!95 &1965140990168762608
+--- !u!95 &7035951270606382638
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0

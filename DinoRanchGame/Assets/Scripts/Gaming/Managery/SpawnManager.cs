@@ -71,6 +71,7 @@ public class SpawnManager : MonoBehaviour
     //zmienia pozycje dla nastêpnego kupionego dinozaura
     private void moveSpawnPosition()
     {
+        Debug.Log(gameObject.transform.position);
         gameObject.transform.position = gameObject.transform.position + new Vector3 (30,0,0);
         edgeTarget.transform.position = gameObject.transform.position + new Vector3(0,0,-7);
     }

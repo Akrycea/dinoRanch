@@ -51,7 +51,7 @@ public class MW2 : MonoBehaviour
             MWarm2Playing();
             if (MW2_count >= 1)
             {
-                MW2gameText.text = "Shave the shape! " + ((MW2_count / 200) * 100).ToString("0") + "%";
+                MW2gameText.text = "Shave the shape! " + ((MW2_count / 400) * 100).ToString("0") + "%";
             }
 
             
@@ -96,19 +96,19 @@ public class MW2 : MonoBehaviour
         MinigameShapes[0].SetActive(true);
         
         //sprawdza wynik i odpala dany shape
-        if (MW2_count >= 50)
+        if (MW2_count >= 150)
         {
             MinigameShapes[0].SetActive(false);
             MinigameShapes[1].SetActive(true);
             
 
-            if (MW2_count >= 100)
+            if (MW2_count >= 200)
             {
                 MinigameShapes[1].SetActive(false);
                 MinigameShapes[2].SetActive(true);
                 
 
-                if (MW2_count >= 150)
+                if (MW2_count >= 300)
                 {
                     MinigameShapes[2].SetActive(false);
                     MinigameShapes[3].SetActive(true);
@@ -118,7 +118,7 @@ public class MW2 : MonoBehaviour
         }
         
         //koncz gre po zrobieniu wszystkich shapes
-        if (MW2_count >= 200)
+        if (MW2_count >= 400)
         {
             MWarm1End();
         }
