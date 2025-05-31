@@ -50,7 +50,8 @@ public class MWT1pipemanager : MonoBehaviour
         {
             obj.SetActive(true);
         }
-        
+        RManager.minigameInProgress = true;
+
     }
 
     //this is supposed to be a win
@@ -90,6 +91,7 @@ public class MWT1pipemanager : MonoBehaviour
         {
             obj.SetActive(false);
         }
+       RManager.minigameInProgress = false;
 
     }
 }

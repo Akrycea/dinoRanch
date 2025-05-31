@@ -12,6 +12,7 @@ public class MF1 : MonoBehaviour
 {
      //zasoby
     public ResourcesManager RManager;
+    public SpawnManager spawnManager;
 
     //rzeczy do minigierki
     public ClickManager ClickManager;
@@ -19,34 +20,41 @@ public class MF1 : MonoBehaviour
     public int MF1berries_count;
     public TMP_Text MF1gameText;
     public GameObject BerryPrefab;
+    private Vector3 minigamePlace;
 
     [SerializeField] private float gameTimer;
     private bool timeStart;
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         foreach (var obj in MinigameObjects)
         {
             obj.SetActive(false);
         }
+        
         timeStart = false;
-    
+
+        MF1gameText.text = "Grab and throw berries into the basket!";
+
+
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         if (timeStart)
         {
+            RManager.minigameInProgress = true;
+            minigamePlace = gameObject.transform.position;
             ClickManager.canClickBG = false;
             MF1StartTimer();
             MFood1Playing();
-            //if (MW1_count >= 1)
-            //{
-            //    MW1gameText.text = MW1_count + " berries";
-           // }
-        
+            if (MF1berries_count >= 1)
+            {
+                MF1gameText.text = "Gathered " + MF1berries_count + " berries";
+            }
+
         }
     
     }
@@ -64,11 +72,16 @@ public class MF1 : MonoBehaviour
         {
             obj.SetActive(true);
         }
-        MF1berries_count=0;
-        gameTimer=10;
-        timeStart=true;
+
+        //ustawia rzeczy do gry
+        MF1berries_count = 0;
+        gameTimer = 13;
+        timeStart = true;
+        
+
+        //spawnuje berries
         Invoke("SpawnFirstFiveBerries",0f);
-        InvokeRepeating("BerrySpawner",2f,2f);
+        InvokeRepeating("BerrySpawner", 1f, 0.3f);
     }
 
     void SpawnFirstFiveBerries()
@@ -76,31 +89,37 @@ public class MF1 : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             Vector3 randomSpawnPosition = new Vector3(UnityEngine.Random.Range(-2f,2f),UnityEngine.Random.Range(0f,3f), 0f);
-            Instantiate(BerryPrefab, randomSpawnPosition, Quaternion.identity);
+            Instantiate(BerryPrefab, minigamePlace + randomSpawnPosition, Quaternion.identity);
         }
     }
     void BerrySpawner()
     {
-            Vector3 randomSpawnPosition = new Vector3(UnityEngine.Random.Range(-2f,2f),UnityEngine.Random.Range(0f,3f),0f);
-            Instantiate(BerryPrefab,randomSpawnPosition,Quaternion.identity);
+            Vector3 randomSpawnPosition = new Vector3(UnityEngine.Random.Range(-3f,3f),UnityEngine.Random.Range(0f,3f),0f);
+            Instantiate(BerryPrefab, minigamePlace + randomSpawnPosition, Quaternion.identity);
     }
 
     void MFood1Playing()
     {
         if (gameTimer < 0)
         {
-            Debug.Log("end game");
+            Debug.Log("end minigame");
             MFood1End();
 
         }
     }
     void MFood1End()
     {
-        timeStart=false;
+        timeStart = false;
+
         RManager.FOOD= RManager.FOOD + MF1berries_count;
+        spawnManager.money = spawnManager.money + MF1berries_count;
+
         StartCoroutine(waitingToEndGame());
-        ClickManager.canClickBG=true;
+
+        ClickManager.canClickBG = true;
+
         DestroyBerries();
+
         CancelInvoke("BerrySpawner");
     }
     void DestroyBerries()
@@ -119,6 +138,7 @@ public class MF1 : MonoBehaviour
         {
             obj.SetActive(false);
         }
+        RManager.minigameInProgress = false;
 
     }
 }

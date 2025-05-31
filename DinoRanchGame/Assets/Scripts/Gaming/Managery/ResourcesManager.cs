@@ -9,6 +9,9 @@ public class ResourcesManager : MonoBehaviour
     public TimeManager timeManager;
     public GameOverMenu gameOverMenu;
 
+    //bool czy jesteœmy w trakcie minigierki
+    public bool minigameInProgress = true;
+
     //bool czy dziala jakis boost
     public bool resourcesBoosted;
     //boole wszytskich isntiejacyh boostow
@@ -62,7 +65,7 @@ public class ResourcesManager : MonoBehaviour
         }
 
         //konczy gre kiedy skoncza sie zasoby
-        if(WARM < 0 || FOOD < 0 || WATER < 0)
+        if(WARM < 0 && !minigameInProgress || FOOD < 0 && !minigameInProgress || WATER < 0 && !minigameInProgress)
         {
             gameOverMenu.gameOver();
         }

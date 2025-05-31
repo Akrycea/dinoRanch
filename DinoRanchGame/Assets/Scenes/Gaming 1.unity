@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 216710425}
   - component: {fileID: 216710424}
   m_Layer: 0
-  m_Name: manager.foodminigame
+  m_Name: ==1==
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,13 +392,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RManager: {fileID: 1754448864}
+  spawnManager: {fileID: 722186711}
   ClickManager: {fileID: 644520264}
   MinigameObjects:
+  - {fileID: 1805203977}
   - {fileID: 2049169416}
   - {fileID: 1954185642}
-  - {fileID: 1805203977}
   MF1berries_count: 0
-  MF1gameText: {fileID: 0}
+  MF1gameText: {fileID: 1611504651}
   BerryPrefab: {fileID: 7060212630939467677, guid: 5bc7465c724cc8048806b96150d8b797, type: 3}
   gameTimer: 0
 --- !u!4 &216710425
@@ -409,15 +410,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216710423}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1805203978}
   - {fileID: 2049169418}
   - {fileID: 1954185643}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1167701725}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &290042578 stripped
 Transform:
@@ -490,7 +491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 448, y: 490}
+  m_AnchoredPosition: {x: 448, y: 394}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &330960834
@@ -624,7 +625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 653, y: 490}
+  m_AnchoredPosition: {x: 653, y: 394}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &345253537
@@ -822,7 +823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -683, y: 490}
+  m_AnchoredPosition: {x: -683, y: 394}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &486267953
@@ -1017,7 +1018,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canClickBG: 0
   MWarm1: {fileID: 1682402968}
+  MWarm2: {fileID: 0}
   MFood1: {fileID: 216710424}
+  MWater1: {fileID: 0}
 --- !u!1 &647774339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,6 +1106,7 @@ MonoBehaviour:
   timeManager: {fileID: 548327320}
   clickManager: {fileID: 644520264}
   resourcesManager: {fileID: 1754448864}
+  boostPages: {fileID: 0}
 --- !u!1 &731985158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 478.96622, y: 426.22}
+  m_AnchoredPosition: {x: 1111.4872, y: 725.23}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &736996972
@@ -2009,6 +2013,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 944257012}
+  - {fileID: 1167701725}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &989466176
@@ -2173,7 +2178,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -2264,7 +2269,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1038028252
@@ -2639,6 +2644,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeManager: {fileID: 548327320}
   clickManager: {fileID: 644520264}
+--- !u!1 &1167701724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1167701725}
+  m_Layer: 0
+  m_Name: ==Min.JEDZENIE==
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1167701725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167701724}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 216710425}
+  m_Father: {fileID: 989466175}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1175298013
 GameObject:
   m_ObjectHideFlags: 0
@@ -3048,7 +3085,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 855, y: 490}
+  m_AnchoredPosition: {x: 855, y: 394}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1628614900
@@ -3419,6 +3456,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeManager: {fileID: 548327320}
   gameOverMenu: {fileID: 0}
+  resourcesBoosted: 0
+  boost1Active: 0
   WARM: 0
   FOOD: 0
   WATER: 0
@@ -3435,10 +3474,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1805203978}
   - component: {fileID: 1805203980}
-  - component: {fileID: 1805203979}
+  - component: {fileID: 1805203982}
+  - component: {fileID: 1805203981}
+  - component: {fileID: 1805203983}
   m_Layer: 0
-  m_Name: Square
-  m_TagString: Untagged
+  m_Name: Basket
+  m_TagString: Basket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3452,61 +3493,12 @@ Transform:
   m_GameObject: {fileID: 1805203977}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.95, y: -1.9, z: 0}
-  m_LocalScale: {x: 2.0147, y: 1, z: 1}
+  m_LocalPosition: {x: 8.09, y: -3.95, z: 0}
+  m_LocalScale: {x: 3.2990713, y: 2.6875, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 216710425}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &1805203979
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805203977}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.5, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
-  m_UseDelaunayMesh: 0
 --- !u!212 &1805203980
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3547,7 +3539,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.7735849, g: 0.49926725, b: 0.3079743, a: 1}
   m_FlipX: 0
@@ -3559,6 +3551,91 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1805203981
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805203977}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.024541162, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4600963, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1805203982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805203977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31290d36a793ae4c907da501d6aa6cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mf1: {fileID: 216710424}
+--- !u!50 &1805203983
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805203977}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1815807778
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,7 +4021,7 @@ GameObject:
   - component: {fileID: 2049169418}
   - component: {fileID: 2049169417}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4263,6 +4340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MiniWARM1: {fileID: 1682402968}
+  flyingFur: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4274,7 +4352,6 @@ SceneRoots:
   - {fileID: 361736502}
   - {fileID: 1023722837}
   - {fileID: 1097160859}
-  - {fileID: 216710425}
   - {fileID: 1747827741}
   - {fileID: 450287673}
   - {fileID: 1029903018}

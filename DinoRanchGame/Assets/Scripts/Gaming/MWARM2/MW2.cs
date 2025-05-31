@@ -46,6 +46,7 @@ public class MW2 : MonoBehaviour
         
         if (timeStart)
         {
+            RManager.minigameInProgress = true;
             clickManager.canClickBG = false;
             MW2StartTimer();
             MWarm2Playing();
@@ -161,6 +162,7 @@ public class MW2 : MonoBehaviour
         {
             obj.SetActive(false);
         }
+        RManager.minigameInProgress = false;
 
 
     }

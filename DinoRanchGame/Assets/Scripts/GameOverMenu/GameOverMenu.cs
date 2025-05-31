@@ -7,6 +7,8 @@ public class GameOverMenu : MonoBehaviour
 {
     public TimeManager timeManager;
     public ClickManager clickManager;
+
+    public bool minigameInProgress = false;
    
     void Start()
     {

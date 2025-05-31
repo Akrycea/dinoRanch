@@ -20,7 +20,6 @@ public class MW1 : MonoBehaviour
     public GameObject[] MinigameObjects;
     public TMP_Text MW1gameText;
 
-
     public bool playingGame = false;
 
     [SerializeField] private float gameTimer;
@@ -41,6 +40,7 @@ public class MW1 : MonoBehaviour
     {
         if (timeStart)
         {
+            RManager.minigameInProgress = true;
             clickManager.canClickBG = false;
             MW1StartTimer();
             MWarm1Playing();
@@ -119,6 +119,7 @@ public class MW1 : MonoBehaviour
         {
             obj.SetActive(false);
         }
+        RManager.minigameInProgress = false;
 
     }
 }
