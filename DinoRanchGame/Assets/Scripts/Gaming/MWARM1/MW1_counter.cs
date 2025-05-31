@@ -9,25 +9,23 @@ public class MW1_counter : MonoBehaviour
     public GameObject[] flyingFur;
     private bool leftFurFlown = false;
     private GameObject[] furs;
-
-    void OnMouseOver()
-    {
-
-    }
+    private Vector3 minigamePlace;
 
     void OnMouseExit()
     {
+
         if (MiniWARM1.playingGame)
         {
             MiniWARM1.MW1_count++;
             if (leftFurFlown)
             {
-                Instantiate(flyingFur[1]);
+                //animacja wariuje, nwm co zrobiæ
+                Instantiate(flyingFur[1], gameObject.transform);
                 leftFurFlown=false;
             }
             else
             {
-                Instantiate(flyingFur[0]);
+                Instantiate(flyingFur[0], gameObject.transform);
                 leftFurFlown=true;
             }
            
@@ -36,6 +34,8 @@ public class MW1_counter : MonoBehaviour
 
     private void Update()
     {
+        
+
         if (MiniWARM1.playingGame == false) 
         {
            furs = GameObject.FindGameObjectsWithTag("Fur");
@@ -43,6 +43,10 @@ public class MW1_counter : MonoBehaviour
             {
                Destroy(obj);
             }
+        }
+        else
+        {
+            minigamePlace = gameObject.transform.position;
         }
     }
 
