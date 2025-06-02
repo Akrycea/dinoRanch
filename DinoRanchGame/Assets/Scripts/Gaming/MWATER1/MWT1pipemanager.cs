@@ -20,6 +20,8 @@ public class MWT1pipemanager : MonoBehaviour
     public GameObject[] Pipes;
     int totalPipes = 0;
 
+
+
     int correctPipes;
     
     public int solution;
@@ -92,6 +94,7 @@ public class MWT1pipemanager : MonoBehaviour
             obj.SetActive(false);
         }
        RManager.minigameInProgress = false;
+        
 
     }
 }
