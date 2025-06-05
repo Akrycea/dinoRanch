@@ -19,6 +19,12 @@ public class MusicManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+    }
+
+    public void StopMusic()
+    {
+        musicSource.Stop();
     }
 
     public void PlayMusic(string songName, float fadeDuration = 0.5f)

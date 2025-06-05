@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class OptionsMenu : MonoBehaviour
 
     //dŸwiêk
     private bool soundOn;
-    public AudioSource musicSource;
+    private MusicManager musicManager;
+
 
     public bool fromPauseMenu;
 
@@ -22,7 +24,8 @@ public class OptionsMenu : MonoBehaviour
     void Start()
     {
         optionsMenu.SetActive(false);
-        musicSource = GameObject.Find("MusicSource").GetComponent<AudioSource>();
+        musicManager = GameObject.Find("SoundManager").GetComponent<MusicManager>();
+
     }
 
     
@@ -41,12 +44,15 @@ public class OptionsMenu : MonoBehaviour
         if (!soundOn) 
         {
             soundOn = true;
-            musicSource.volume = 1.0f;
+            musicManager.PlayMusic("MainMenu");
+
+            
         }
         else
         {
             soundOn = false;
-            musicSource.volume = 0.0f;
+            musicManager.StopMusic();
+
         }
     }
 
