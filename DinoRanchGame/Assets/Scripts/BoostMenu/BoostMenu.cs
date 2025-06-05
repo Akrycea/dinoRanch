@@ -5,12 +5,28 @@ using UnityEngine.UI;
 
 public class BoostMenu : MonoBehaviour
 {
+    public DataManager dataManager;
     public ResourcesManager resourcesManager;
     public SpawnManager spawnManager;
+    public TimeManager timeManager;
     Button button;
+
+    
     private void Start()
     {
         button = gameObject.GetComponent<Button>();
+    }
+
+    private void Update()
+    {
+        if (gameObject.activeSelf)
+        {
+            timeManager.didGameStart = false;
+        }
+        else
+        {
+            timeManager.didGameStart = true;
+        }
     }
     public void BuyDino ()
     {
@@ -20,6 +36,7 @@ public class BoostMenu : MonoBehaviour
             Debug.Log("bought dino");
             //spawnuje dino
             spawnManager.spawn1BoughtDino();
+            
 
             //mówi ¿e resources dostaj¹ boosta
             resourcesManager.boost1Active = true;
@@ -27,6 +44,8 @@ public class BoostMenu : MonoBehaviour
 
             //wy³¹cza mo¿liwoœæ klikniêcia przycisku
             button.enabled = false;
+
+            dataManager.SaveGame();
         }
         else
         {
@@ -38,6 +57,10 @@ public class BoostMenu : MonoBehaviour
 
     public void skipToNextDay()
     {
+        dataManager.SaveGame();
         spawnManager.closeBoostUI();
+        
     }
+
+    
 }

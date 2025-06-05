@@ -5,13 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class StartingMenu : MonoBehaviour
 {
+    public DataManager dataManager;
     private void Start()
     {
         MusicManager.Instance.PlayMusic("MainMenu");
     }
-    public void startGame()
+    public void NewGame()
     {
+        dataManager.Restart();
         SceneManager.LoadScene(1);
+
+    }
+
+    public void ContinueGame()
+    {
+
+        SceneManager.LoadScene(1);
+
+
     }
 
     public void quitGame()

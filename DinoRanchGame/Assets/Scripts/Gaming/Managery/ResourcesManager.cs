@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ResourcesManager : MonoBehaviour
+public class ResourcesManager : MonoBehaviour, IDataManager
 {
     public TimeManager timeManager;
     public GameOverMenu gameOverMenu;
@@ -18,9 +18,9 @@ public class ResourcesManager : MonoBehaviour
     [HideInInspector] public bool boost1Active;
 
     //resources set
-    public float WARM;
+    public float WARM = 30;
     public float FOOD;
-    public float WATER;
+    public float WATER ;
 
     //liczba zasobów pokazywana na UI
     public TMP_Text warmCount;
@@ -30,13 +30,15 @@ public class ResourcesManager : MonoBehaviour
     void Start()
     {
         //ile jest zasobów na pocz¹tku
-        WARM = 30;
-        FOOD = 30;
-        WATER = 30;
+        //WARM = 30;
+        //FOOD = 30;
+        //WATER = 30;
 
         //wy³¹cza boosty
         resourcesBoosted = false;
         boost1Active = false;
+
+        minigameInProgress = false;
 
     }
 
@@ -65,9 +67,14 @@ public class ResourcesManager : MonoBehaviour
         }
 
         //konczy gre kiedy skoncza sie zasoby
-        if(WARM < 0 && !minigameInProgress || FOOD < 0 && !minigameInProgress || WATER < 0 && !minigameInProgress)
+        if(WARM < 0 || FOOD < 0 || WATER < 0 )
         {
-            gameOverMenu.gameOver();
+            if (!minigameInProgress)
+            {
+                Debug.Log("ending game because of low resources");
+                gameOverMenu.gameOver();
+            }
+            
         }
     }
 
@@ -94,6 +101,22 @@ public class ResourcesManager : MonoBehaviour
         WARM = 30;
         FOOD = 30;
         WATER = 30;
+    }
+
+
+    //DO £ADOWANIA I ZAPISYWANIA GRY
+    public void LoadData(DinoData data)
+    {
+       this.WARM = data.WARM;
+       this.WATER = data.WATER;
+       this.FOOD = data.FOOD;
+    }
+
+    public void SaveData(ref DinoData data)
+    {
+        data.WARM = this.WARM;
+        data.WATER = this.WATER;
+        data.FOOD = this.FOOD;
     }
 
 

@@ -33,46 +33,53 @@ public class ClickManager : MonoBehaviour
     void whatGetsClicked()
     {
 
-        if (Input.GetMouseButtonDown(0) && canClickBG)
+        if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
-
-            //sprawdza wszystkie dinozaury z tagiem CIEP�A
-            if (rayHit.transform.CompareTag("WARM"))
+            if (canClickBG)
             {
-                //co robi klikniecie na danego dinozaura
-                if (rayHit.transform.name == "DefDino1")
+                RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
+
+                //sprawdza wszystkie dinozaury z tagiem CIEP�A
+                if (rayHit.transform.CompareTag("WARM"))
                 {
-                    Debug.Log("Defdino1");
-                    MWarm1.StartMWarm1();
-                }
-                else if (rayHit.transform.name == "Dino1(Clone)")
-                {
-                    Debug.Log("dino1");
-                    MWarm2.StartMWarm2();
+                    //co robi klikniecie na danego dinozaura
+                    if (rayHit.transform.name == "DefDino1")
+                    {
+                        Debug.Log("Defdino1");
+                        MWarm1.StartMWarm1();
+                    }
+                    else if (rayHit.transform.name == "Dino1(Clone)")
+                    {
+                        Debug.Log("dino1");
+                        MWarm2.StartMWarm2();
+                    }
+
                 }
 
+                //sprawdza wszystkie dinozaury z tagiem WODY
+                else if (rayHit.transform.CompareTag("WATER"))
+                {
+                    if (rayHit.transform.name == "DefDino2")
+                    {
+                        Debug.Log("Defdino2");
+                        MWater1.StartMWater1();
+                    }
+                }
+
+                //sprawdza wszystkie dinozaury z tagiem JEDZENIA
+                else if (rayHit.transform.CompareTag("FOOD"))
+                {
+                    if (rayHit.transform.name == "DefDino3")
+                    {
+                        Debug.Log("Defdino3");
+                        MFood1.StartMF1();
+                    }
+
+                }
             }
-
-            //sprawdza wszystkie dinozaury z tagiem WODY
-            else if (rayHit.transform.CompareTag("WATER"))
+            else
             {
-                if (rayHit.transform.name == "DefDino2")
-                {
-                    Debug.Log("Defdino2");
-                    MWater1.StartMWater1();
-                }
-            }
-
-            //sprawdza wszystkie dinozaury z tagiem JEDZENIA
-            else if (rayHit.transform.CompareTag("FOOD"))
-            {
-                if (rayHit.transform.name == "DefDino3")
-                {
-                    Debug.Log("Defdino3");
-                    MFood1.StartMF1();
-                }
-
+                Debug.Log("can't click BG right now!");
             }
 
 

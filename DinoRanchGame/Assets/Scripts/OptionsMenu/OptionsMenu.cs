@@ -10,10 +10,11 @@ public class OptionsMenu : MonoBehaviour
     //potrzebne managery
     public TimeManager timeManager;
     public ClickManager clickManager;
-    public AudioSource audioSource;
+
 
     //dŸwiêk
     private bool soundOn;
+    public AudioSource musicSource;
 
     public bool fromPauseMenu;
 
@@ -21,6 +22,7 @@ public class OptionsMenu : MonoBehaviour
     void Start()
     {
         optionsMenu.SetActive(false);
+        musicSource = GameObject.Find("MusicSource").GetComponent<AudioSource>();
     }
 
     
@@ -39,12 +41,12 @@ public class OptionsMenu : MonoBehaviour
         if (!soundOn) 
         {
             soundOn = true;
-            audioSource.volume = 1f;
+            musicSource.volume = 1.0f;
         }
         else
         {
             soundOn = false;
-            audioSource.volume = 0f;
+            musicSource.volume = 0.0f;
         }
     }
 
@@ -59,6 +61,8 @@ public class OptionsMenu : MonoBehaviour
         else
         {
             optionsMenu.SetActive(false);
+            timeManager.didGameStart = true;
+            clickManager.canClickBG = true;
         }
     }
 }

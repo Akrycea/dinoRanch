@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManager : MonoBehaviour, IDataManager
 {
     //lista dinozaurów do spawnowania
     public GameObject[] spawnableDinos;
@@ -27,6 +27,9 @@ public class SpawnManager : MonoBehaviour
     //zak³adki z dinozaurami i ich przewijanie
     public BoostPages boostPages;
 
+    //na chama boole który dino kupiony a który nie
+    public bool dino1bought;
+
 
     void Start()
     {
@@ -37,8 +40,14 @@ public class SpawnManager : MonoBehaviour
         }
 
         //zeruje kase na pocz¹tku lvl
-        money = 0;
+        //money = 0;
         moneyCount.text = money.ToString("0");
+
+        if (dino1bought)
+        {
+            Instantiate(spawnableDinos[0], gameObject.transform.position + new Vector3(30, 0, 0), Quaternion.identity);
+        }
+
 
     }
 
@@ -63,9 +72,11 @@ public class SpawnManager : MonoBehaviour
     public void spawn1BoughtDino()
     {
         moveSpawnPosition();
-        Instantiate(spawnableDinos[0], gameObject.transform.position, Quaternion.identity );
+        Instantiate(spawnableDinos[0], gameObject.transform.position, Quaternion.identity);
+        dino1bought = true;
         money = money - 10;
         closeBoostUI();
+        
     }
 
     //zmienia pozycje dla nastêpnego kupionego dinozaura
@@ -93,6 +104,23 @@ public class SpawnManager : MonoBehaviour
         //odnawia resources
         resourcesManager.resetResources();
 
+    }
+
+    //DO £ADOWANIA I ZAPISYWANIA GRY
+    public void LoadData(DinoData data)
+    {
+        this.money = data.MONEY;
+        this.edgeTarget.transform.position = data.rightCameraTarget;
+
+        this.dino1bought = data.dino1bought;
+    }
+
+    public void SaveData(ref DinoData data)
+    {
+        data.MONEY = this.money;
+        data.rightCameraTarget = this.edgeTarget.transform.position;
+
+        data.dino1bought = this.dino1bought;
     }
 
 }

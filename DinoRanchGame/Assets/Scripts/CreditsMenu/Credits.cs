@@ -7,6 +7,9 @@ public class Credits : MonoBehaviour
     public GameObject creditsMenu;
     public GameObject pasueMenu;
 
+    public TimeManager timeManager;
+    public ClickManager clickManager;
+
     public bool fromPauseMenu;
     
     void Start()
@@ -28,6 +31,8 @@ public class Credits : MonoBehaviour
             else
             {
                 creditsMenu.SetActive(false);
+                timeManager.didGameStart = true;
+                clickManager.canClickBG = true;
             }
         }
     }

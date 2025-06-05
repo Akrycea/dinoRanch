@@ -15,4 +15,5 @@ Just click on the dinos and see what happens!
 
 <<unblockClicking DialogueManager>>
 <<startTime DialogueManager>>
+<<endTutorial DialogueManager>>
 ===

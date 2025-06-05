@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class MF1_GrabBerry : MonoBehaviour
 {
-    //prêdkoœæ pod¹¿ania berry za myszk¹
-    [SerializeField] private float maxSpeed = 20f;
-
     private bool grabbed = false;
 
     private Camera mainCamera;
