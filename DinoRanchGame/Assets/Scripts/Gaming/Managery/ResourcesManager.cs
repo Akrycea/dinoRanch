@@ -18,7 +18,7 @@ public class ResourcesManager : MonoBehaviour, IDataManager
     [HideInInspector] public bool boost1Active;
 
     //resources set
-    public float WARM = 30;
+    public float WARM;
     public float FOOD;
     public float WATER ;
 
@@ -53,17 +53,17 @@ public class ResourcesManager : MonoBehaviour, IDataManager
         foodCount.text = FOOD.ToString("0");
 
         //pilnuje ¿eby nie by³o wiêcej ni¿ max zasobów
-        if (WARM > 30)
+        if (WARM > 100)
         {
-            WARM = 30;
+            WARM = 100;
         }
-        if (FOOD > 30)
+        if (FOOD > 100)
         {
-            FOOD = 30;
+            FOOD = 100;
         }
-        if (WATER > 30)
+        if (WATER > 100)
         {
-            WATER = 30;
+            WATER = 100;
         }
 
         //konczy gre kiedy skoncza sie zasoby
@@ -83,7 +83,7 @@ public class ResourcesManager : MonoBehaviour, IDataManager
         //spadanie iloœci zasobów z czasem bez boostow
         if(timeManager.currentTime >0 && timeManager.didGameStart)
         {
-            WARM = WARM - Time.deltaTime * 2;
+            WARM = WARM - Time.deltaTime * 1.5f;
             FOOD = FOOD - Time.deltaTime / 2;
             WATER = WATER - Time.deltaTime / 4;
 

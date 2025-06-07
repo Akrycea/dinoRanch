@@ -75,10 +75,10 @@ public class MWT1pipemanager : MonoBehaviour
         StartCoroutine(waitingToEndGame());
 
         //dodaje zdobyte zasoby
-        RManager.WATER = RManager.WATER + 40;
+        RManager.WATER = RManager.WATER + 50;
 
         //dodaje zdobytą kasę za opiekę
-        SManager.money = SManager.money + 10;
+        SManager.money = SManager.money + 15;
 
 
         //przywraca klikanie na tło

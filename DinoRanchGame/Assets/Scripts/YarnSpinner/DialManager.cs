@@ -23,7 +23,7 @@ public class DialManager : MonoBehaviour, IDataManager
         {
             dialogueRunner.StartDialogue("NarratorTalk");
         }
-        else
+        else if (tutorialPlayed == true) 
         {
             clickManager.canClickBG = true;
             timeManager.didGameStart = true;
@@ -41,6 +41,7 @@ public class DialManager : MonoBehaviour, IDataManager
     {
         timeManager.didGameStart = true;
     }
+
 
     [YarnCommand("blockClicking")]
     public void blockClicking()

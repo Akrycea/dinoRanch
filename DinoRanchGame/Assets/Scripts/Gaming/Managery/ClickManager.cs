@@ -33,10 +33,9 @@ public class ClickManager : MonoBehaviour
     void whatGetsClicked()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canClickBG)
         {
-            if (canClickBG)
-            {
+            
                 RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
 
                 //sprawdza wszystkie dinozaury z tagiem CIEP�A
@@ -76,14 +75,12 @@ public class ClickManager : MonoBehaviour
                     }
 
                 }
-            }
-            else
-            {
-                Debug.Log("can't click BG right now!");
-            }
+            
+            
 
 
         }
+
     }
 
 

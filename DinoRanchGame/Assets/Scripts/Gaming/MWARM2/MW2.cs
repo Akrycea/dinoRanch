@@ -52,7 +52,7 @@ public class MW2 : MonoBehaviour
             MWarm2Playing();
             if (MW2_count >= 1)
             {
-                MW2gameText.text = "Shave the shape! " + ((MW2_count / 400) * 100).ToString("0") + "%";
+                MW2gameText.text = "Shave the shape! " + ((MW2_count / 500) * 100).ToString("0") + "%";
             }
 
             
@@ -97,19 +97,19 @@ public class MW2 : MonoBehaviour
         MinigameShapes[0].SetActive(true);
         
         //sprawdza wynik i odpala dany shape
-        if (MW2_count >= 150)
+        if (MW2_count >= 200)
         {
             MinigameShapes[0].SetActive(false);
             MinigameShapes[1].SetActive(true);
             
 
-            if (MW2_count >= 200)
+            if (MW2_count >= 350)
             {
                 MinigameShapes[1].SetActive(false);
                 MinigameShapes[2].SetActive(true);
                 
 
-                if (MW2_count >= 300)
+                if (MW2_count >= 500)
                 {
                     MinigameShapes[2].SetActive(false);
                     MinigameShapes[3].SetActive(true);
@@ -119,7 +119,7 @@ public class MW2 : MonoBehaviour
         }
         
         //koncz gre po zrobieniu wszystkich shapes
-        if (MW2_count >= 400)
+        if (MW2_count >= 500)
         {
             MWarm1End();
         }
@@ -137,10 +137,10 @@ public class MW2 : MonoBehaviour
         timeStart = false;
 
         //dodaje zdobyte zasoby
-        RManager.WARM = RManager.WARM + 50;
+        RManager.WARM = RManager.WARM + 30;
 
         //dodaje zdobytą kasę za opiekę
-        spawnManager.money = spawnManager.money + 20;
+        spawnManager.money = spawnManager.money + 10;
 
 
         //przywraca klikanie na tło

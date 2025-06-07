@@ -33,6 +33,7 @@ public class DinoData
         this.WATER = 30;
         this.FOOD = 30;
         this.MONEY = 0;
+ 
 
         //nie wiem czemu ale n mo¿na podaæ rzeczywistego miejsca gdzie chcemy kamere
         //wiêc podane jest tak ¿eby jakoœ dzia³a³o

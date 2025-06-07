@@ -111,7 +111,7 @@ public class MF1 : MonoBehaviour
     {
         timeStart = false;
 
-        RManager.FOOD= RManager.FOOD + MF1berries_count;
+        RManager.FOOD= RManager.FOOD + MF1berries_count + 10;
         spawnManager.money = spawnManager.money + MF1berries_count;
 
         StartCoroutine(waitingToEndGame());

@@ -16,7 +16,8 @@ public class OptionsMenu : MonoBehaviour
     //dŸwiêk
     private bool soundOn;
     private MusicManager musicManager;
-
+    public Sprite[] soundButtonSprites;
+    public Button soundButton;
 
     public bool fromPauseMenu;
 
@@ -45,14 +46,14 @@ public class OptionsMenu : MonoBehaviour
         {
             soundOn = true;
             musicManager.PlayMusic("MainMenu");
-
+            soundButton.image.sprite = soundButtonSprites[0];
             
         }
         else
         {
             soundOn = false;
             musicManager.StopMusic();
-
+            soundButton.image.sprite = soundButtonSprites[1];
         }
     }
 
