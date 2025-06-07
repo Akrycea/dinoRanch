@@ -104,7 +104,7 @@ public class MW1 : MonoBehaviour
         RManager.WARM = RManager.WARM + MW1_count;
 
         //dodaje zdobytą kasę za opiekę
-        spawnManager.money =  spawnManager.money + MW1_count/2;
+        spawnManager.money =  spawnManager.money + MW1_count/4;
         
 
         //przywraca klikanie na tło
