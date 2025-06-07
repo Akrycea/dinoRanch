@@ -53,13 +53,13 @@ public class CameraManager : MonoBehaviour
 
     public void scrollToLeft()
     {
-        transform.position = Vector3.Lerp(transform.position, targetL.position, 0.004f);
+        transform.position = Vector3.Lerp(transform.position, targetL.position, 0.008f);
         StartCoroutine(WaitForCameraL());
     }
 
     public void scrollToRight()
     {
-        transform.position = Vector3.Lerp(transform.position, targetR.position, 0.004f);
+        transform.position = Vector3.Lerp(transform.position, targetR.position, 0.008f);
         StartCoroutine(WaitForCameraR());
     }
 

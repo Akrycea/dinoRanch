@@ -38,6 +38,14 @@ public class TimeManager : MonoBehaviour
         {
             timePassing();
         }
+
+        if (currentTime <= 0)
+        {
+            if (resourcesManager.minigameInProgress == false)
+            {
+                dayEnds();
+            }
+        }
     }
 
     //metoda mijania czasu
@@ -51,10 +59,7 @@ public class TimeManager : MonoBehaviour
         timer.text = currentTime.ToString("0");
 
         //koniec dnia po skoñczeniu siê czasu
-        if ( currentTime <= 0 && resourcesManager.minigameInProgress == false)
-        {
-            dayEnds();
-        }
+        
     }
 
     //koniec dnia
