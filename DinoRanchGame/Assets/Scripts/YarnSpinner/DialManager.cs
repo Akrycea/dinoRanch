@@ -21,6 +21,8 @@ public class DialManager : MonoBehaviour, IDataManager
         yield return new WaitForSeconds(1);
         if (tutorialPlayed == false)
         {
+            timeManager.didGameStart = false;
+            clickManager.canClickBG = false;
             dialogueRunner.StartDialogue("NarratorTalk");
         }
         else if (tutorialPlayed == true) 

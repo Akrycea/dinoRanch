@@ -29,10 +29,7 @@ public class TimeManager : MonoBehaviour
     
     void Update()
     {
-        if (didGameStart)
-        {
-            Debug.Log("started game");
-        }
+        Debug.Log("started time?" + didGameStart);
         //czeka a¿ zacznie siê gra aby zacz¹æ liczyæ czas
         if (didGameStart && currentTime > 0)
         {
